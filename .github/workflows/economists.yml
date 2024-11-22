@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: download economists mobi
+name: download economists 
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -42,15 +42,19 @@ jobs:
 #      uses: mxschmitt/action-tmate@v2
 
     # Runs a single command using the runners shell
-    - name: Download the Economists mobi
+
+    - name: Download the Economists 
+        # mkdir mobi/ && cd mobi/
+        # ebook-convert "The Economist.recipe" `date +%Y%m%d`.mobi
       run: |
-        mkdir mobi/ && cd mobi/
-        ebook-convert "The Economist.recipe" `date +%Y%m%d`.mobi
+        mkdir epub/ && cd epub/
+        ebook-convert "The Economist.recipe" `date +%Y%m%d`.epub        
+        
     - name: Upload artifact
       uses: actions/upload-artifact@v3
       with:
          # Artifact name
-        name: Latest mobi
+        name: Latest issue
     # Directory containing files to upload
         path: ./mobi/
         
