@@ -39,7 +39,7 @@ jobs:
         mkdir mobi/ && cd mobi/
         ebook-convert "The Economist.recipe" `date +%Y%m%d`.mobi
     - name: Upload artifact
-      uses: actions/upload-artifact@v1.0.0
+      uses: actions/upload-artifact@v3
       with:
          # Artifact name
         name: Latest mobi
