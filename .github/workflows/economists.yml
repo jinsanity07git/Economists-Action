@@ -47,7 +47,7 @@ jobs:
         # mkdir mobi/ && cd mobi/
         # ebook-convert "The Economist.recipe" `date +%Y%m%d`.mobi
       run: |
-        mkdir epub/ && cd epub/
+        mkdir eco/ && cd eco/
         ebook-convert "The Economist.recipe" `date +%Y%m%d`.epub        
         
     - name: Upload artifact
@@ -56,5 +56,5 @@ jobs:
          # Artifact name
         name: Latest issue
     # Directory containing files to upload
-        path: ./mobi/
+        path: ./eco/
         
