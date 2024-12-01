@@ -48,13 +48,17 @@ jobs:
         # ebook-convert "The Economist.recipe" `date +%Y%m%d`.mobi
       run: |
         mkdir eco/ && cd eco/
-        ebook-convert "The Economist.recipe" `date +%Y%m%d`.epub        
-        
+        ebook-convert "The Economist.recipe" `date +%Y%m%d`.mobi        
+
+    - name: Set Date
+      id: vars
+      run: echo "date=$(date +%Y%m%d)" >> $GITHUB_ENV
+      
     - name: Upload artifact
       uses: actions/upload-artifact@v3
       with:
          # Artifact name
-        name: Latest issue
+        name: "eco-${{ env.date }}"
     # Directory containing files to upload
-        path: ./eco/
+        path: ./
         
