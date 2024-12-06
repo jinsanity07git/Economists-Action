@@ -48,7 +48,7 @@ jobs:
         # ebook-convert "The Economist.recipe" `date +%Y%m%d`.mobi
       run: |
         mkdir eco/ && cd eco/
-        ebook-convert "The Economist.recipe" `date +%Y%m%d`.mobi        
+        ebook-convert "The Economist.recipe" `date +%Y%m%d`.epub        
 
     - name: Set Date
       id: vars
